@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/tailwind.css" rel="stylesheet">
+    <title>Crypto List</title>
+</head>
+<body class="bg-gray-100 text-gray-900">
+<div class="container mx-auto px-4">
+    <h1 class="text-3xl font-bold my-4">Top Cryptocurrencies</h1>
+    <ul class="list-disc pl-5">
+        {% for crypto in cryptos %}
+            <li class="my-2">
+                <a href="/crypto/{{ crypto.symbol }}" class="text-blue-500 hover:underline">
+                    {{ crypto.name }} ({{ crypto.symbol }})
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+</body>
+</html>

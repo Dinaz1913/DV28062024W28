@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/tailwind.css" rel="stylesheet">
+    <title>{{ crypto.name }} Details</title>
+</head>
+<body>
+<h1 class="text-2xl font-bold">{{ crypto.name }} ({{ crypto.symbol }})</h1>
+<p>Price: ${{ crypto.quote.price }}</p>
+<p>Market Cap: ${{ crypto.quote.market_cap }}</p>
+<p>Volume (24h): ${{ crypto.quote.volume_24h }}</p>
+<p>Market Cap Dominance: {{ crypto.quote.market_cap_dominance }}%</p>
+<p>Last Updated: {{ crypto.quote.last_updated }}</p>
+
+{% if error %}
+    <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
+        <strong class="font-bold">Error!</strong>
+        <span class="block sm:inline">{{ error }}</span>
+    </div>
+{% endif %}
+
+<form action="/crypto/buy" method="post">
+    <input type="hidden" name="symbol" value="{{ crypto.symbol }}">
+    <input type="number" name="amount" placeholder="Amount to buy" class="block mb-2">
+    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Buy</button>
+</form>
+
+<form action="/crypto/sell" method="post">
+    <input type="hidden" name="symbol" value="{{ crypto.symbol }}">
+    <input type="number" name="amount" placeholder="Amount to sell" class="block mb-2">
+    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Sell</button>
+</form>
+</body>
+</html>

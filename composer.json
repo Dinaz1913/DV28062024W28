@@ -1,0 +1,32 @@
+{
+  "name": "reelz222z/cryptoexchange",
+  "description": "Crypto trade web app",
+  "type": "project",
+  "license": "mit",
+  "autoload": {
+    "psr-4": {
+      "Reelz222z\\Cryptoexchange\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "dinaz12"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "vlucas/phpdotenv": "^5.4",
+    "symfony/http-foundation": "^6.4",
+    "symfony/routing": "^7.1",
+    "symfony/http-kernel": "^6.3",
+    "symfony/twig-bundle": "^6.1",
+    "guzzlehttp/guzzle": "^7.8",
+    "symfony/event-dispatcher": "^6.4",
+    "twig/twig": "^3.3",
+    "pimple/pimple": "^3.0",
+    "ext-pdo_sqlite": "*",
+    "ext-pdo": "*",
+    "symfony/dependency-injection": "^6.4",
+    "symfony/dotenv": "^7.1"
+  }
+}
